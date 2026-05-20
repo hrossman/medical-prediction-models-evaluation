@@ -348,3 +348,27 @@ def plot_full_evaluation(y_true, y_prob, auroc=None, auprc=None,
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
     return fig
+
+
+def plot_core_evaluation(y_true, y_prob, auroc=None,
+                         threshold_range=(0.01, 0.5), save_path=None):
+    """
+    Plot the recommended core evaluation panel.
+
+    Creates a compact 2x2 figure with AUROC, calibration, decision curve,
+    and risk distribution. This is the preferred plotting entry point for
+    routine validation reports.
+    """
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    fig.suptitle("Medical Prediction Model Evaluation", fontsize=14, fontweight="bold")
+
+    plot_roc_curve(y_true, y_prob, auroc=auroc, ax=axes[0, 0])
+    plot_calibration(y_true, y_prob, ax=axes[0, 1])
+    plot_decision_curve(y_true, y_prob, threshold_range=threshold_range, ax=axes[1, 0])
+    plot_risk_distribution(y_true, y_prob, ax=axes[1, 1])
+
+    plt.tight_layout()
+
+    if save_path:
+        fig.savefig(save_path, dpi=150, bbox_inches="tight")
+    return fig

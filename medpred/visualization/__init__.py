@@ -9,4 +9,5 @@ from medpred.visualization.plots import (
     plot_expected_cost_curve,
     plot_classification_at_thresholds,
     plot_full_evaluation,
+    plot_core_evaluation,
 )

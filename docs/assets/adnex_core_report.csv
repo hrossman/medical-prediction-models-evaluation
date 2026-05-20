@@ -1,0 +1,12 @@
+domain,measure,value,recommendation,properness,focus
+discrimination,auroc,0.911,recommended,semi-proper,clear statistical focus
+calibration,oe_ratio,1.228,supporting,semi-proper,partial calibration summary
+calibration,calibration_intercept,0.753,supporting,semi-proper,partial calibration summary
+calibration,calibration_slope,0.934,supporting,semi-proper,partial calibration summary
+overall,brier_score,0.133,supporting,strictly proper,overall statistical score
+clinical_utility,net_benefit,0.443,recommended,semi-proper,decision-analytical focus
+clinical_utility,standardized_net_benefit,0.912,recommended,semi-proper,decision-analytical focus
+classification_descriptive,sensitivity,0.954,descriptive,improper alone,report with specificity
+classification_descriptive,specificity,0.643,descriptive,improper alone,report with sensitivity
+classification_descriptive,ppv,0.716,descriptive,improper alone,report with NPV
+classification_descriptive,npv,0.937,descriptive,improper alone,report with PPV

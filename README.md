@@ -70,6 +70,9 @@ uv run python examples/adnex_walkthrough.py
 This prints the core report, saves `adnex_core_evaluation.png`, and demonstrates
 logistic recalibration.
 
+For a fuller explanation with saved example figures, function inventory, tips,
+and the main paper guidance, see [docs/walkthrough.md](docs/walkthrough.md).
+
 ## What The Default Report Includes
 
 | Domain | Measures |

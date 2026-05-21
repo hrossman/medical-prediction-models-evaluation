@@ -35,6 +35,10 @@ print(report.to_frame())
 report.plot(save_path="evaluation.png")
 ```
 
+Example core panel:
+
+<img src="docs/assets/readme_core_panel.png" alt="ADNEX core evaluation panel" width="760">
+
 ## Core API
 
 ```python
@@ -58,6 +62,36 @@ For the complete paper inventory:
 ```python
 full = medpred.evaluate_all(y_true, y_prob, threshold=0.10)
 ```
+
+## Plot Examples
+
+The recommended report plot is a compact 2x2 panel:
+
+```python
+report = medpred.evaluate(y_true, y_prob, threshold=0.10)
+report.plot(
+    threshold_range=(0.05, 0.40),
+    save_path="core_panel.png",
+)
+```
+
+For exploratory work, use the full panel with additional diagnostic plots:
+
+```python
+from medpred.visualization import plot_full_evaluation
+
+full = medpred.evaluate_all(y_true, y_prob, threshold=0.10)
+plot_full_evaluation(
+    y_true,
+    y_prob,
+    auroc=full["discrimination"]["auroc"],
+    auprc=full["discrimination"]["auprc"],
+    threshold_range=(0.05, 0.40),
+    save_path="full_panel.png",
+)
+```
+
+<img src="docs/assets/readme_full_panel.png" alt="ADNEX full evaluation panel" width="900">
 
 ## Walkthrough
 

@@ -10,6 +10,7 @@ build/
 .pytest_cache/
 output/
 *.png
+!docs/assets/*.png
 !data/*.txt
 .env
 .venv
